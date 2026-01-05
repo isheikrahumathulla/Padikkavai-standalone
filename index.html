@@ -363,6 +363,41 @@
     <script src="js/main.js"></script>
 
 
+<script>
+  // Get elements
+  const musicPopup = document.getElementById("music-popup");
+  const allowBtn = document.getElementById("allow-music");
+  const bgMusic = document.getElementById("bg-music");
+
+  // When user clicks Allow
+  allowBtn.addEventListener("click", function () {
+    bgMusic.volume = 0.5; // 50% volume
+    bgMusic.play().catch(() => {});
+    musicPopup.style.display = "none";
+  });
+</script>
+
+
+    <script>
+  const musicPopup = document.getElementById("music-popup");
+  const allowBtn = document.getElementById("allow-music");
+  const bgMusic = document.getElementById("bg-music");
+
+  if (localStorage.getItem("musicAllowed") === "yes") {
+    bgMusic.volume = 0.5;
+    bgMusic.play().catch(() => {});
+    musicPopup.style.display = "none";
+  }
+
+  allowBtn.addEventListener("click", function () {
+    bgMusic.volume = 0.5;
+    bgMusic.play().catch(() => {});
+    localStorage.setItem("musicAllowed", "yes");
+    musicPopup.style.display = "none";
+  });
+</script>
+
+    
    <!-- Music Permission Popup -->
 <div id="music-popup" style="
   position: fixed;
