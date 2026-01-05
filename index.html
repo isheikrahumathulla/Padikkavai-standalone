@@ -362,5 +362,75 @@
     <script src="js/scripts-dist.js"></script>
     <script src="js/main.js"></script>
 
+<!-- ================= MUSIC POPUP + AUDIO ================= -->
+
+<!-- Music Permission Popup -->
+<div id="music-popup" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+  <div style="
+    background: #ffffff;
+    padding: 25px 30px;
+    max-width: 360px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  ">
+    <h4 style="margin-bottom: 10px;">🔊 Enable Background Music</h4>
+    <p style="font-size: 14px; margin-bottom: 20px;">
+      Allow this website to interact with you using soft background music.
+    </p>
+
+    <button id="allow-music"
+      style="
+        padding: 8px 20px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        background: transparent;
+        cursor: pointer;
+      ">
+      Allow
+    </button>
+
+    <br><br>
+    <small style="opacity:0.6;">You can mute anytime</small>
+  </div>
+</div>
+
+<!-- Background Music -->
+<audio id="bg-music" preload="auto">
+  <source src="bg_music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const musicPopup = document.getElementById("music-popup");
+  const allowBtn = document.getElementById("allow-music");
+  const bgMusic = document.getElementById("bg-music");
+
+  // If user already allowed music
+  if (localStorage.getItem("musicAllowed") === "yes") {
+    bgMusic.volume = 0.5; // 50%
+    bgMusic.play().catch(() => {});
+    musicPopup.style.display = "none";
+  }
+
+  // When user clicks Allow
+  allowBtn.addEventListener("click", function () {
+    bgMusic.volume = 0.5; // 50%
+    bgMusic.play().catch(() => {});
+    localStorage.setItem("musicAllowed", "yes");
+    musicPopup.style.display = "none";
+  });
+</script>
+
+<!-- ================= END MUSIC CODE ================= -->
+
+    
   </body>
 </html>
