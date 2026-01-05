@@ -362,5 +362,40 @@
     <script src="js/scripts-dist.js"></script>
     <script src="js/main.js"></script>
 
+
+   <!-- Music Permission Popup -->
+<div id="music-popup" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+  <div style="
+    background: #fff;
+    padding: 25px 30px;
+    max-width: 360px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  ">
+    <h4 style="margin-bottom: 10px;">🔊 Enable Background Music</h4>
+    <p style="font-size: 14px; margin-bottom: 20px;">
+      Allow this website to interact with you using soft background music.
+    </p>
+    <button id="allow-music" class="btn btn-outline-pill btn-custom-light">
+      Allow
+    </button>
+    <br><br>
+    <small style="opacity:0.6;">You can mute anytime</small>
+  </div>
+</div>
+
+<audio id="bg-music" preload="auto">
+  <source src="bg_music.mp3" type="audio/mpeg">
+</audio>
+ 
   </body>
 </html>
