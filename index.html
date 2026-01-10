@@ -381,10 +381,13 @@
     border-radius: 12px;
     text-align: center;
     font-family: Arial, sans-serif;
+    color: #000;
   ">
-    <h4 style="margin-bottom: 10px;">🔊 Enable Background Music</h4>
-    <p style="font-size: 14px; margin-bottom: 20px;">
-      Allow this website to interact with you using soft background music.
+   <h4 style="margin-bottom: 10px;">📖 Padikkavai Foundation</h4>
+    <p style="font-size: 14px; margin-bottom: 20px; line-height: 1.5;">
+      கல்வி என்பது அனைவருக்கும் உரியது.<br>
+      இந்த கல்விப் பயணத்தில் <strong>எங்களுடன் இணைந்து</strong>,<br>
+      உங்கள் ஆதரவு சமூக மாற்றத்திற்கு ஒரு சிறிய ஒளி தருகிறது.
     </p>
 
     <button id="allow-music"
@@ -395,16 +398,14 @@
         background: transparent;
         cursor: pointer;
       ">
-      Accept
+      Close
     </button>
-
-    <br><br>
-    <small style="opacity:0.6;">You can mute anytime</small>
+    
   </div>
 </div>
 
 <!-- Background Music -->
-<!-- <audio id="bg-music" preload="auto">
+<audio id="bg-music" preload="auto">
   <source src="bg_music.mp3" type="audio/mpeg">
 </audio>
 
@@ -427,40 +428,9 @@
     localStorage.setItem("musicAllowed", "yes");
     musicPopup.style.display = "none";
   });
-</script> -->
+</script>
 
 <!-- ================= END MUSIC CODE ================= -->
-
-
-    <!-- Support Popup -->
-<div id="support-popup" style="position: fixed; inset: 0; background: rgba(0,0,0,0.75); display: flex; align-items: center; justify-content: center; z-index: 9999;">
-  <div style="background: #ffffff; padding: 25px 30px; max-width: 360px; border-radius: 12px; text-align: center; font-family: Arial, sans-serif;">
-    
-    <!-- Title / Statement -->
-    <p style="font-size: 14px; margin-bottom: 20px; line-height: 1.5;">
-      கல்வி என்பது அனைவருக்கும் உரியது.<br>
-      இந்த கல்விப் பயணத்தில் <strong>எங்களுடன் இணைந்து</strong>,<br>
-      உங்கள் ஆதரவு சமூக மாற்றத்திற்கு ஒரு சிறிய ஒளி தருகிறது.
-    </p>
-
-    <!-- Close Button -->
-    <button id="close-support" style="padding: 8px 20px; border-radius: 25px; border: 1px solid #000; background: transparent; cursor: pointer;">
-      Close
-    </button>
-
-  </div>
-</div>
-
-<script>
-  const supportPopup = document.getElementById("support-popup");
-  const closeBtn = document.getElementById("close-support");
-
-  // Close popup on button click
-  closeBtn.addEventListener("click", function () {
-    supportPopup.style.display = "none";
-  });
-</script>
-<!-- Support Popup End -->
     
   </body>
 </html>
