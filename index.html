@@ -413,12 +413,16 @@
   const allowBtn = document.getElementById("allow-music");
   const bgMusic = document.getElementById("bg-music");
 
-  // If user already allowed music
-  if (localStorage.getItem("musicAllowed") === "yes") {
+// Show popup every time
+musicPopup.style.display = "flex";
+
+// When user clicks Allow
+allowBtn.addEventListener("click", function () {
     bgMusic.volume = 0.5; // 50%
-    bgMusic.play().catch(() => {});
-    musicPopup.style.display = "none";
-  }
+    bgMusic.play().catch(() => {}); // start music
+    musicPopup.style.display = "none"; // hide popup
+});
+
 
   // When user clicks Allow
   allowBtn.addEventListener("click", function () {
